@@ -442,12 +442,15 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform var(--transition-slow);
+.carousel-inner {
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-xl);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform var(--transition-slow);
 }
 
 .carousel-slide {
@@ -607,15 +610,53 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow-md);
 }
 
-.marca-card img {
-    max-width: 150px;
-    height: auto;
-    filter: grayscale(100%);
-    transition: filter var(--transition-normal);
+.marca-nombre {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    padding: 8px 24px;
 }
 
-.marca-card:hover img {
-    filter: grayscale(0%);
+.marca-nombre::before,
+.marca-nombre::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.marca-nombre::before {
+    top: 0;
+}
+
+.marca-nombre::after {
+    bottom: 0;
+}
+
+.marca-card:hover .marca-nombre,
+.marca-card.active .marca-nombre {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.marca-card:hover .marca-nombre::before,
+.marca-card:hover .marca-nombre::after,
+.marca-card.active .marca-nombre::before,
+.marca-card.active .marca-nombre::after {
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -624,21 +665,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .marca-card {
-        padding: 16px;
+        padding: 12px;
     }
 
-    .marca-card img {
-        max-width: 100px;
+    .marca-nombre {
+        font-size: 1rem;
+        padding: 6px 16px;
     }
 }
 
 .marca-card.active {
     border-color: var(--color-primary);
     background: var(--color-primary-light);
-}
-
-.marca-card.active img {
-    filter: grayscale(0%);
 }
 
 .modelos-section {
