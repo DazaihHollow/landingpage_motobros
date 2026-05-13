@@ -41,6 +41,13 @@
 
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
             updateDots();
+            updateSlideClasses();
+        }
+
+        function updateSlideClasses() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentIndex);
+            });
         }
 
         function nextSlide() {
@@ -87,7 +94,10 @@
 
         if (slides.length > 1) {
             createDots();
+            updateSlideClasses();
             startAutoPlay();
+        } else if (slides.length === 1) {
+            slides[0].classList.add('active');
         }
     };
 

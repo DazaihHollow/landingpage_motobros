@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MotoBros - Tu tienda de confianza para motos y repuestos. Encuentra las mejores marcas, precios competitivos y atención especializada.">
+    <meta name="description" content="MotoBros - Tu tienda de confianza para motos. Encuentra Yamaha, Honda, Kawasaki, Suzuki y KTM. Modelos naked, sport y adventure. Financiamiento disponible y servicio postventa.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#E53935">
-    <title>MotoBros - Tu tienda de motos y repuestos</title>
+    <title>MotoBros - Venta de Motos | Yamaha, Honda, Kawasaki, Suzuki, KTM</title>
     <link rel="canonical" href="https://motobros.com">
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <meta property="og:title" content="MotoBros - Tu tienda de confianza para motos">
+    <meta property="og:description" content="Encuentra las mejores marcas de motos: Yamaha, Honda, Kawasaki, Suzuki y KTM. Modelos naked, sport y adventure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://motobros.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1200&h=630&fit=crop&q=80">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MotoBros - Venta de Motos">
+    <meta name="twitter:description" content="Tu tienda de confianza para motos. Yamaha, Honda, Kawasaki, Suzuki y KTM.">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -20,10 +28,94 @@
       "name": "MotoBros",
       "url": "https://motobros.com",
       "description": "Tienda de motos y repuestos",
+      "logo": "https://motobros.com/assets/icons/favicon.ico",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+52-55-1234-5678",
+        "contactType": "sales",
+        "availableTime": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Principal #123, Col. Centro",
+        "addressLocality": "Ciudad de México",
+        "postalCode": "06000",
+        "addressCountry": "MX"
+      },
       "sameAs": [
         "https://facebook.com/motobros",
         "https://instagram.com/motobros",
-        "https://twitter.com/motobros"
+        "https://twitter.com/motobros",
+        "https://youtube.com/motobros"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué documentos necesito para comprar una moto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para la compra necesitas presentar identificación oficial (INE o pasaporte), comprobante de domicilio y licencia de conducir vigente. En caso de financiamiento, se solicitarán documentos adicionales de ingresos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Ofrecen garantía en las motos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, todas nuestras motos incluyen garantía oficial del fabricante que varía entre 1 a 3 años dependiendo de la marca. Además, ofrecemos planes de garantía extendida opcional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tienen servicio de mantenimiento y reparaciones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contamos con taller autorizado para todas las marcas que representamos. Nuestro equipo de técnicos certificados ofrece servicios de mantenimiento preventivo, reparaciones generales y instalación de accesorios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo probar la moto antes de comprarla?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "¡Por supuesto! Ofrecemos pruebas de manejo agendadas. Solo necesitas presentar tu licencia de conducir vigente y firmar un consentimiento. Las pruebas están sujetas a disponibilidad de modelos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué formas de pago aceptan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aceptamos pagos en efectivo, transferencias bancarias, tarjetas de débito y crédito. También ofrecemos financiamiento directamente a través de nuestras instituciones financieras aliadas con tasas competitivas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Envían motorcycles a otras ciudades?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, realizamos envíos a todo el país. El transporte se realiza en unidades especializadas para motorcycles, con seguro incluido. Los costos y tiempos varían según el destino."
+          }
+        }
       ]
     }
     </script>
@@ -69,37 +161,8 @@
                     <a href="#marcas" class="btn btn-primary">Ver Catálogo</a>
                 </div>
             </div>
-            <div class="carousel" aria-label="Galería de motos">
-                <div class="carousel-inner">
-                    <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1200&h=600&fit=crop&q=80" alt="Motociclista en carretera con moto deportiva" loading="eager">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=1200&h=600&fit=crop&q=80" alt="Moto naked urbana moderna" loading="eager">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://imgs.search.brave.com/7Dtz8gEsOEpZ3nimJX88S9yRScVGGpGrq8CWZOtRRak/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGVj/dHJvdGllbmRhLmNv/bS5lYy93ZWIvaW1h/Z2UvcHJvZHVjdC5p/bWFnZS80ODA0L2lt/YWdlXzEwMjQvTW90/byUyMENsJUMzJUEx/c2ljYSUyMERheXRv/bmElMjBEWTE3MCUy/MENhZmUlMjBSYWNl/ciUyMC0lMjBDb2xv/ciUyMEdyaXM_dW5p/cXVlPWY5ODRjYzA" alt="Moto clásica cafe racer vintage" loading="eager">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://imgs.search.brave.com/owehBidKe_2cxCeny1tdyH1jvrmdZXTghii2WFTaW54/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vc3VubWF4L3N1/bm1heDIwMDYvc3Vu/bWF4MjAwNjAwMDQ4/LzE0ODQyNDU0MS1k/ZXBvcnRlcy1kZS1j/b2xvcmVzLWhlcm1v/c2FzLWJpY2ljbGV0/YXMtZGUtY2FycmV0/ZXJhLWVuLXVuLXNh/bCVDMyVCM24tZGVs/LWF1dG9tJUMzJUIz/dmlsLW11Y2hhcy1t/b3Rvcy5qcGc_dmVy/PTY" alt="Moto deportiva en carretera" loading="eager">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://imgs.search.brave.com/CW-pyB4R9ACbFE302QIzNuACsFPLoRqLPEMM9g7csk0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjIw/NDI5NTAwOC9waG90/by9iZXJsaW4tZ2Vy/bWFueS12YXJpb3Vz/LW1vZGVscy1vZi10/aGUtdXMtbW90b3Jj/eWNsZS1tYW51ZmFj/dHVyZXItaGFybGV5/LWRhdmlkc29uLWFy/ZS1kaXNwbGF5ZWQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXNfbTdrZ25mSnVC/TmtzTjR6eGlqbG5p/Z1g2aHllb0pUVEdj/ME1XamVXaDA9" alt="Showroom de motos" loading="eager">
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-btn carousel-prev" aria-label="Imagen anterior">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                </button>
-                <button class="carousel-btn carousel-next" aria-label="Imagen siguiente">
-                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-                <div class="carousel-dots" role="tablist" aria-label="Navegación de imágenes"></div>
+            <div class="hero-bg" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1920&h=1080&fit=crop&q=80" alt="">
             </div>
         </section>
 
@@ -150,7 +213,7 @@
                             <!-- Yamaha -->
                             <article class="modelo-card" data-marca="yamaha">
                                 <div class="modelo-image">
-                                    <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&h=250&fit=crop&q=80" alt="Yamaha MT-07" loading="lazy">
+                                    <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&h=250&fit=crop&q=80" alt="Yamaha MT-07" width="400" height="250" loading="lazy">
                                 </div>
                                 <div class="modelo-info">
                                     <span class="modelo-marca">Yamaha</span>
