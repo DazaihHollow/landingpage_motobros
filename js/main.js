@@ -197,6 +197,179 @@
         });
     };
 
+    const ModelCarousel = function() {
+        const track = document.getElementById('modelos-track');
+        if (!track) return;
+
+        const cards = track.querySelectorAll('.modelo-card');
+        const marcaCards = document.querySelectorAll('.marca-card[data-marca]');
+        const prevBtn = document.querySelector('.modelos-prev');
+        const nextBtn = document.querySelector('.modelos-next');
+
+        let currentIndex = 0;
+        let autoPlayInterval;
+        let selectedMarca = null;
+        let filteredCards = Array.from(cards);
+        const CARD_WIDTH = 304;
+        const VISIBLE_CARDS = Math.floor(track.parentElement.offsetWidth / CARD_WIDTH) || 3;
+        const AUTO_PLAY_DELAY = 3000;
+
+        function getFilteredCards() {
+            if (!selectedMarca) {
+                return Array.from(cards);
+            }
+            return Array.from(cards).filter(card => card.dataset.marca === selectedMarca);
+        }
+
+        function updateFilteredCards() {
+            filteredCards = getFilteredCards();
+            currentIndex = 0;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const maxIndex = Math.max(0, filteredCards.length - VISIBLE_CARDS);
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            if (currentIndex < 0) currentIndex = 0;
+
+            const offset = currentIndex * CARD_WIDTH;
+            track.style.transform = `translateX(-${offset}px)`;
+
+            cards.forEach(card => {
+                const isVisible = filteredCards.includes(card);
+                card.classList.toggle('hidden', !isVisible);
+            });
+        }
+
+        function nextSlide() {
+            const maxIndex = Math.max(0, filteredCards.length - VISIBLE_CARDS);
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            const maxIndex = Math.max(0, filteredCards.length - VISIBLE_CARDS);
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = maxIndex;
+            }
+            updateCarousel();
+        }
+
+        function startAutoPlay() {
+            if (selectedMarca) return;
+            stopAutoPlay();
+            autoPlayInterval = setInterval(nextSlide, AUTO_PLAY_DELAY);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+            track.classList.add('paused');
+        }
+
+        marcaCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const marca = card.dataset.marca;
+
+                if (selectedMarca === marca) {
+                    selectedMarca = null;
+                    card.classList.remove('active');
+                    card.setAttribute('aria-pressed', 'false');
+                    startAutoPlay();
+                } else {
+                    marcaCards.forEach(c => {
+                        c.classList.remove('active');
+                        c.setAttribute('aria-pressed', 'false');
+                    });
+                    selectedMarca = marca;
+                    card.classList.add('active');
+                    card.setAttribute('aria-pressed', 'true');
+                    stopAutoPlay();
+                }
+
+                updateFilteredCards();
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#marcas') && !e.target.closest('#modelos')) {
+                if (selectedMarca) {
+                    selectedMarca = null;
+                    marcaCards.forEach(c => {
+                        c.classList.remove('active');
+                        c.setAttribute('aria-pressed', 'false');
+                    });
+                    updateFilteredCards();
+                    startAutoPlay();
+                }
+            }
+        });
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                if (selectedMarca) {
+                    track.classList.add('paused');
+                } else {
+                    track.classList.remove('paused');
+                    startAutoPlay();
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                if (selectedMarca) {
+                    track.classList.add('paused');
+                } else {
+                    track.classList.remove('paused');
+                    startAutoPlay();
+                }
+            });
+        }
+
+        track.addEventListener('mouseenter', () => {
+            if (!selectedMarca) {
+                stopAutoPlay();
+            }
+        });
+
+        track.addEventListener('mouseleave', () => {
+            if (!selectedMarca) {
+                track.classList.remove('paused');
+                startAutoPlay();
+            }
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopAutoPlay();
+            } else {
+                if (!selectedMarca) {
+                    startAutoPlay();
+                }
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            const newVisibleCards = Math.floor(track.parentElement.offsetWidth / CARD_WIDTH) || 3;
+            if (newVisibleCards !== VISIBLE_CARDS) {
+                updateCarousel();
+            }
+        });
+
+        updateCarousel();
+        startAutoPlay();
+    };
+
     const FormValidation = function() {
         const form = document.querySelector('.contacto-form');
         if (!form) return;
@@ -248,6 +421,7 @@
 
     const init = function() {
         Carousel();
+        ModelCarousel();
         FAQ();
         MobileNav();
         HeaderScroll();

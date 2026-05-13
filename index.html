@@ -108,21 +108,249 @@
                 <h2 id="marcas-title" class="section-title">Marcas disponibles</h2>
                 <p class="section-subtitle">Representamos a los fabricantes más confiables del mercado</p>
                 <div class="marcas-grid">
-                    <div class="marca-card">
+                    <button class="marca-card" data-marca="yamaha" aria-pressed="false">
                         <img src="https://placehold.co/200x80/1a1a2e/ffffff?text=Yamaha" alt="Yamaha" loading="lazy">
-                    </div>
-                    <div class="marca-card">
+                    </button>
+                    <button class="marca-card" data-marca="honda" aria-pressed="false">
                         <img src="https://placehold.co/200x80/1a1a2e/ffffff?text=Honda" alt="Honda" loading="lazy">
-                    </div>
-                    <div class="marca-card">
+                    </button>
+                    <button class="marca-card" data-marca="kawasaki" aria-pressed="false">
                         <img src="https://placehold.co/200x80/1a1a2e/ffffff?text=Kawasaki" alt="Kawasaki" loading="lazy">
-                    </div>
-                    <div class="marca-card">
+                    </button>
+                    <button class="marca-card" data-marca="suzuki" aria-pressed="false">
                         <img src="https://placehold.co/200x80/1a1a2e/ffffff?text=Suzuki" alt="Suzuki" loading="lazy">
-                    </div>
-                    <div class="marca-card">
+                    </button>
+                    <button class="marca-card" data-marca="ktm" aria-pressed="false">
                         <img src="https://placehold.co/200x80/1a1a2e/ffffff?text=KTM" alt="KTM" loading="lazy">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="modelos" class="modelos-section" aria-labelledby="modelos-title">
+            <div class="container">
+                <h2 id="modelos-title" class="section-title">Modelos destacados</h2>
+                <p class="section-subtitle">Descubre las motos más populares de cada marca</p>
+                <div class="modelos-carousel-wrapper">
+                    <button class="modelos-carousel-btn modelos-prev" aria-label="Modelo anterior">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="modelos-carousel" id="modelos-carousel" role="region" aria-label="Carrusel de modelos destacados">
+                        <div class="modelos-track" id="modelos-track">
+                            <!-- Yamaha -->
+                            <article class="modelo-card" data-marca="yamaha">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&h=250&fit=crop&q=80" alt="Yamaha MT-07" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Yamaha</span>
+                                    <h3 class="modelo-nombre">MT-07</h3>
+                                    <p class="modelo-descripcion">Naked sport con motor de 689cc, perfecta para ciudad y carretera.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="yamaha">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&q=80" alt="Yamaha R6" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Yamaha</span>
+                                    <h3 class="modelo-nombre">YZF-R6</h3>
+                                    <p class="modelo-descripcion">Supersport de altas prestaciones con tecnología de MotoGP.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="yamaha">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1609630875171-e132d2e7154c?w=400&h=250&fit=crop&q=80" alt="Yamaha XSR900" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Yamaha</span>
+                                    <h3 class="modelo-nombre">XSR900</h3>
+                                    <p class="modelo-descripcion">Retro naked con estilo clásico y tecnología moderna.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="yamaha">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=400&h=250&fit=crop&q=80" alt="Yamaha Tenere 700" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Yamaha</span>
+                                    <h3 class="modelo-nombre">Tenere 700</h3>
+                                    <p class="modelo-descripcion">Adventure off-road listos para cualquier expedición.</p>
+                                </div>
+                            </article>
+                            <!-- Honda -->
+                            <article class="modelo-card" data-marca="honda">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=250&fit=crop&q=80" alt="Honda CB650R" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Honda</span>
+                                    <h3 class="modelo-nombre">CB650R</h3>
+                                    <p class="modelo-descripcion">Naked sport con Look Neo Sports Café y motor de 649cc.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="honda">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c3d?w=400&h=250&fit=crop&q=80" alt="Honda Gold Wing" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Honda</span>
+                                    <h3 class="modelo-nombre">Gold Wing</h3>
+                                    <p class="modelo-descripcion">Touring de lujo con máximo confort para largas distancias.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="honda">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558617800-3714b6b0b8c0?w=400&h=250&fit=crop&q=80" alt="Honda CBR1000RR" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Honda</span>
+                                    <h3 class="modelo-nombre">CBR1000RR-R</h3>
+                                    <p class="modelo-descripcion">Superbike de carreras con tecnología de MotoGP.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="honda">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1605705659703-4a5c1a4c1c1c?w=400&h=250&fit=crop&q=80" alt="Honda Africa Twin" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Honda</span>
+                                    <h3 class="modelo-nombre">Africa Twin</h3>
+                                    <p class="modelo-descripcion">Adventure flagships con capacidad off-road excepcional.</p>
+                                </div>
+                            </article>
+                            <!-- Kawasaki -->
+                            <article class="modelo-card" data-marca="kawasaki">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=400&h=250&fit=crop&q=80" alt="Kawasaki Z900" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Kawasaki</span>
+                                    <h3 class="modelo-nombre">Z900</h3>
+                                    <p class="modelo-descripcion">Naked sport con potencia de 125cv y diseño agresivo.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="kawasaki">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558981376-88c4b39e5cc9?w=400&h=250&fit=crop&q=80" alt="Kawasaki Ninja ZX-6R" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Kawasaki</span>
+                                    <h3 class="modelo-nombre">Ninja ZX-6R</h3>
+                                    <p class="modelo-descripcion">Supersport media con equilibrio perfecto entre potencia y manejabilidad.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="kawasaki">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=400&h=250&fit=crop&q=80" alt="Kawasaki Versys 650" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Kawasaki</span>
+                                    <h3 class="modelo-nombre">Versys 650</h3>
+                                    <p class="modelo-descripcion">Touring adventure ideal para viajes de media distancia.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="kawasaki">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1609630875171-e132d2e7154c?w=400&h=250&fit=crop&q=80" alt="Kawasaki Vulcan S" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Kawasaki</span>
+                                    <h3 class="modelo-nombre">Vulcan S</h3>
+                                    <p class="modelo-descripcion">Cruiser deportivo con estilo y rendimiento dinámico.</p>
+                                </div>
+                            </article>
+                            <!-- Suzuki -->
+                            <article class="modelo-card" data-marca="suzuki">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&q=80" alt="Suzuki GSX-S750" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Suzuki</span>
+                                    <h3 class="modelo-nombre">GSX-S750</h3>
+                                    <p class="modelo-descripcion">Naked sport con carácter agresivo y rendimiento excepcional.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="suzuki">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=400&h=250&fit=crop&q=80" alt="Suzuki V-Strom 650" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Suzuki</span>
+                                    <h3 class="modelo-nombre">V-Strom 650</h3>
+                                    <p class="modelo-descripcion">Adventure versátil y accesible para cualquier camino.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="suzuki">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&h=250&fit=crop&q=80" alt="Suzuki Katana" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Suzuki</span>
+                                    <h3 class="modelo-nombre">Katana</h3>
+                                    <p class="modelo-descripcion">Leyenda de los 80 renacida con tecnología actual.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="suzuki">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=250&fit=crop&q=80" alt="Suzuki Hayabusa" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">Suzuki</span>
+                                    <h3 class="modelo-nombre">Hayabusa</h3>
+                                    <p class="modelo-descripcion">Hyper touring con velocidad máxima legendaria.</p>
+                                </div>
+                            </article>
+                            <!-- KTM -->
+                            <article class="modelo-card" data-marca="ktm">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558981376-88c4b39e5cc9?w=400&h=250&fit=crop&q=80" alt="KTM Duke 890" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">KTM</span>
+                                    <h3 class="modelo-nombre">Duke 890</h3>
+                                    <p class="modelo-descripcion">Naked hiperagresiva con potencia de 121cv y peso pluma.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="ktm">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?w=400&h=250&fit=crop&q=80" alt="KTM RC 390" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">KTM</span>
+                                    <h3 class="modelo-nombre">RC 390</h3>
+                                    <p class="modelo-descripcion">Sport de aprendiz con ADN de carreras y comportamiento dinámico.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="ktm">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1609630875171-e132d2e7154c?w=400&h=250&fit=crop&q=80" alt="KTM 1290 Super Adventure" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">KTM</span>
+                                    <h3 class="modelo-nombre">1290 Super Adventure</h3>
+                                    <p class="modelo-descripcion">Adventure de alta gama para viajes ilimitados.</p>
+                                </div>
+                            </article>
+                            <article class="modelo-card" data-marca="ktm">
+                                <div class="modelo-image">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&q=80" alt="KTM 390 Adventure" loading="lazy">
+                                </div>
+                                <div class="modelo-info">
+                                    <span class="modelo-marca">KTM</span>
+                                    <h3 class="modelo-nombre">390 Adventure</h3>
+                                    <p class="modelo-descripcion">Adventure accesible para explorar cualquier terreno.</p>
+                                </div>
+                            </article>
+                        </div>
                     </div>
+                    <button class="modelos-carousel-btn modelos-next" aria-label="Modelo siguiente">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>

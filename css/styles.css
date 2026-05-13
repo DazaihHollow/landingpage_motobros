@@ -632,6 +632,183 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.marca-card.active {
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+.marca-card.active img {
+    filter: grayscale(0%);
+}
+
+.modelos-section {
+    padding: 80px 20px;
+    background: var(--color-light);
+    overflow: hidden;
+}
+
+.modelos-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.modelos-carousel {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.modelos-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: max-content;
+}
+
+.modelos-track.paused {
+    transition: none;
+}
+
+.modelo-card {
+    flex: 0 0 280px;
+    background: var(--color-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.modelo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-secondary);
+}
+
+.modelo-card.hidden {
+    display: none;
+}
+
+.modelo-card.active {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg), 0 0 0 2px var(--color-primary);
+}
+
+.modelo-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.modelo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.modelo-card:hover .modelo-image img {
+    transform: scale(1.08);
+}
+
+.modelo-info {
+    padding: 20px;
+}
+
+.modelo-marca {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-secondary);
+    background: var(--color-secondary-light);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+}
+
+.modelo-nombre {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+.modelo-descripcion {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+}
+
+.modelos-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: var(--color-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.modelos-carousel-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-light);
+}
+
+.modelos-carousel-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.modelos-prev {
+    left: -24px;
+}
+
+.modelos-next {
+    right: -24px;
+}
+
+@media (max-width: 768px) {
+    .modelo-card {
+        flex: 0 0 240px;
+    }
+
+    .modelos-prev {
+        left: -16px;
+    }
+
+    .modelos-next {
+        right: -16px;
+    }
+
+    .modelos-carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modelos-section {
+        padding: 48px 16px;
+    }
+
+    .modelo-card {
+        flex: 0 0 200px;
+    }
+}
+
 .beneficios-section {
     padding: 80px 20px;
     background: linear-gradient(180deg, var(--color-light) 0%, var(--color-light-tertiary) 100%);
